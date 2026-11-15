@@ -1,8 +1,32 @@
+---
+import { Polaroid } from "@/components/ui/Polaroid";
+import { WelcomeForm } from "@/components/game/WelcomeForm";
+
+const tagline = "Satu jawab jujur, satu menebak.";
+
+const steps = [
+  "Buat room, lalu kirim link ke pasanganmu.",
+  "Tiap ronde, satu orang menjawab jujur dan satunya menebak.",
+  "Jawaban dibuka bersamaan, lalu kalian bergantian peran.",
+];
+---
+
 <div id="container">
-  <main>
-    <section id="hero" class="px-8 py-20">
-      <h1 class="text-4xl font-bold">Selamat Datang di Couple Quiz!</h1>
-    </section>
+  <main class="mx-auto flex min-h-dvh w-full max-w-sm flex-col gap-8 px-5 py-8">
+    <header>
+      <h1 class="font-display text-4xl leading-tighht font-semibold text-cocoa">Couple Quiz</h1>
+      <p class="font-ui mt-2 text-lg text-cocoa">{tagline}</p>
+    </header>
+
+    <div class="flex justify-center py-2">
+      <Polaroid develop tilt={-2} caption="Contoh pertanyaan">
+        <p class="font-display text-center text-2xl text-cocoa">
+          Untuk liburan, Sadie lebih memilih pantai atau gunung?
+        </p>
+      </Polaroid>
+    </div>
+
+    <WelcomeForm client:load />
   </main>
 </div>
 
